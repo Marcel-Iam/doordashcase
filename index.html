@@ -695,7 +695,7 @@
                                 <th class="sortable" data-column="region">Region</th>
                                 <th class="sortable" data-column="gmv">GMV</th>
                                 <th class="sortable" data-column="orders">Orders</th>
-                                <th class="sortable" data-column="delivery">Avg Delivery</th>
+                                <th class="sortable" data-column="delivery">Avg Total Fulfillment</th>
                                 <th class="sortable" data-column="tier">Performance Tier</th>
                                 <th class="sortable" data-column="retention">Retention</th>
                             </tr>
@@ -771,9 +771,9 @@
                         <h3 class="card-title">Operational Performance</h3>
                     </div>
                     
-                    <!-- Total Fulfillment Time (Full Width) -->
+                    <!-- Avg Total Fulfillment Time (Full Width) -->
                     <div class="metric" style="margin-bottom: 1.5rem;">
-                        <div class="metric-label">Total Fulfillment Time</div>
+                        <div class="metric-label">Avg Total Fulfillment Time</div>
                         <div class="metric-value" id="total-fulfillment">-</div>
                         <div class="metric-diff" id="total-fulfillment-diff"></div>
                     </div>
@@ -880,12 +880,12 @@
                 "peak_hour": 18,
                 "peak_hour_count": 1879,
                 "operational": {
-                        "total_fulfillment_time": 30.84,
-                        "prep_time": 13.41,
+                        "total_fulfillment_time": 29.14,
+                        "prep_time": 13.05,
                         "delivery_time": 16.09,
-                        "fast_pct": 26.87,
-                        "normal_pct": 44.95,
-                        "slow_pct": 26.83,
+                        "fast_pct": 27.06,
+                        "normal_pct": 45.28,
+                        "slow_pct": 26.29,
                         "driver_to_order_ratio": 0.475
                 },
                 "revenue": {
@@ -979,6 +979,18 @@
                                                 "Scranton"
                                         ]
                                 }
+                        ],
+                        "attention_orders": [
+                                {
+                                        "region": "Portland",
+                                        "customer_order_time": "2024-09-13 18:13:44.711000",
+                                        "restaurant_receive_time": "2024-09-14 18:14:20.319000",
+                                        "driver_arrive_time": "2024-09-19 15:34:54.358000",
+                                        "customer_receive_time": "2024-09-19 16:04:53.097000",
+                                        "total_fulfillment_min": 7070.55,
+                                        "delay_hours": 117.3,
+                                        "reason": "Driver arrival delayed by 117.3 hours (likely manual delay request or fulfillment issue)"
+                                }
                         ]
                 },
                 "top_10_regions": [
@@ -989,7 +1001,7 @@
                                 "gmv_pct": 15.99,
                                 "orders": 3077,
                                 "order_pct": 15.53,
-                                "avg_delivery_time": 29.62,
+                                "avg_delivery_time": 28.29,
                                 "retention": 22.61,
                                 "performance_tier": "Average"
                         },
@@ -1000,7 +1012,7 @@
                                 "gmv_pct": 13.01,
                                 "orders": 3220,
                                 "order_pct": 16.25,
-                                "avg_delivery_time": 23.71,
+                                "avg_delivery_time": 22.78,
                                 "retention": 38.81,
                                 "performance_tier": "Elite"
                         },
@@ -1011,7 +1023,7 @@
                                 "gmv_pct": 6.89,
                                 "orders": 1263,
                                 "order_pct": 6.37,
-                                "avg_delivery_time": 22.48,
+                                "avg_delivery_time": 20.03,
                                 "retention": 22.49,
                                 "performance_tier": "Elite"
                         },
@@ -1022,7 +1034,7 @@
                                 "gmv_pct": 5.28,
                                 "orders": 794,
                                 "order_pct": 4.01,
-                                "avg_delivery_time": 41.17,
+                                "avg_delivery_time": 41.13,
                                 "retention": 18.94,
                                 "performance_tier": "Poor"
                         },
@@ -1033,7 +1045,7 @@
                                 "gmv_pct": 4.58,
                                 "orders": 774,
                                 "order_pct": 3.91,
-                                "avg_delivery_time": 44.46,
+                                "avg_delivery_time": 42.24,
                                 "retention": 17.65,
                                 "performance_tier": "Poor"
                         },
@@ -1044,9 +1056,9 @@
                                 "gmv_pct": 4.58,
                                 "orders": 643,
                                 "order_pct": 3.25,
-                                "avg_delivery_time": 37.02,
+                                "avg_delivery_time": 34.75,
                                 "retention": 20.17,
-                                "performance_tier": "Poor"
+                                "performance_tier": "Average"
                         },
                         {
                                 "rank": 7,
@@ -1055,7 +1067,7 @@
                                 "gmv_pct": 4.23,
                                 "orders": 767,
                                 "order_pct": 3.87,
-                                "avg_delivery_time": 45.15,
+                                "avg_delivery_time": 42.98,
                                 "retention": 28.27,
                                 "performance_tier": "Poor"
                         },
@@ -1066,7 +1078,7 @@
                                 "gmv_pct": 4.22,
                                 "orders": 1000,
                                 "order_pct": 5.05,
-                                "avg_delivery_time": 25.44,
+                                "avg_delivery_time": 25.31,
                                 "retention": 25.51,
                                 "performance_tier": "Average"
                         },
@@ -1088,7 +1100,7 @@
                                 "gmv_pct": 2.95,
                                 "orders": 711,
                                 "order_pct": 3.59,
-                                "avg_delivery_time": 25.98,
+                                "avg_delivery_time": 25.97,
                                 "retention": 21.64,
                                 "performance_tier": "Average"
                         }
@@ -1098,43 +1110,43 @@
                                 "day": "Monday",
                                 "orders": 2818,
                                 "gmv": 96886.97,
-                                "avg_fulfillment": 30.41
+                                "avg_fulfillment": 28.24
                         },
                         {
                                 "day": "Tuesday",
                                 "orders": 2525,
                                 "gmv": 83566.69,
-                                "avg_fulfillment": 29.54
+                                "avg_fulfillment": 28.24
                         },
                         {
                                 "day": "Wednesday",
                                 "orders": 2420,
                                 "gmv": 83133.41,
-                                "avg_fulfillment": 29.79
+                                "avg_fulfillment": 28.47
                         },
                         {
                                 "day": "Thursday",
                                 "orders": 2540,
                                 "gmv": 90047.74,
-                                "avg_fulfillment": 29.85
+                                "avg_fulfillment": 29.16
                         },
                         {
                                 "day": "Friday",
                                 "orders": 2932,
                                 "gmv": 107235.64,
-                                "avg_fulfillment": 34.76
+                                "avg_fulfillment": 32.99
                         },
                         {
                                 "day": "Saturday",
                                 "orders": 3284,
                                 "gmv": 122805.16,
-                                "avg_fulfillment": 30.22
+                                "avg_fulfillment": 29.48
                         },
                         {
                                 "day": "Sunday",
                                 "orders": 3294,
                                 "gmv": 119420.3,
-                                "avg_fulfillment": 30.89
+                                "avg_fulfillment": 29.47
                         }
                 ],
                 "hourly_stats": [
@@ -1142,145 +1154,145 @@
                                 "hour": 0,
                                 "orders": 336,
                                 "gmv": 10602.9,
-                                "avg_fulfillment": 28.68
+                                "avg_fulfillment": 27.45
                         },
                         {
                                 "hour": 1,
                                 "orders": 239,
                                 "gmv": 6334.04,
-                                "avg_fulfillment": 26.1
+                                "avg_fulfillment": 26.07
                         },
                         {
                                 "hour": 2,
                                 "orders": 100,
                                 "gmv": 2552.17,
-                                "avg_fulfillment": 33.99
+                                "avg_fulfillment": 29.04
                         },
                         {
                                 "hour": 3,
                                 "orders": 22,
                                 "gmv": 627.88,
-                                "avg_fulfillment": 35.21
+                                "avg_fulfillment": 35.2
                         },
                         {
                                 "hour": 4,
                                 "orders": 74,
                                 "gmv": 1927.44,
-                                "avg_fulfillment": 39.5
+                                "avg_fulfillment": 35.58
                         },
                         {
                                 "hour": 5,
                                 "orders": 42,
                                 "gmv": 1086.67,
-                                "avg_fulfillment": 37.3
+                                "avg_fulfillment": 34.85
                         },
                         {
                                 "hour": 6,
                                 "orders": 186,
                                 "gmv": 4768.73,
-                                "avg_fulfillment": 33.73
+                                "avg_fulfillment": 32.61
                         },
                         {
                                 "hour": 7,
                                 "orders": 299,
                                 "gmv": 7729.97,
-                                "avg_fulfillment": 30.72
+                                "avg_fulfillment": 29.11
                         },
                         {
                                 "hour": 8,
                                 "orders": 594,
                                 "gmv": 15827.11,
-                                "avg_fulfillment": 25.88
+                                "avg_fulfillment": 24.73
                         },
                         {
                                 "hour": 9,
                                 "orders": 785,
                                 "gmv": 21300.28,
-                                "avg_fulfillment": 27.24
+                                "avg_fulfillment": 24.0
                         },
                         {
                                 "hour": 10,
                                 "orders": 993,
                                 "gmv": 29017.31,
-                                "avg_fulfillment": 27.15
+                                "avg_fulfillment": 25.33
                         },
                         {
                                 "hour": 11,
                                 "orders": 1332,
                                 "gmv": 42983.04,
-                                "avg_fulfillment": 28.82
+                                "avg_fulfillment": 28.01
                         },
                         {
                                 "hour": 12,
                                 "orders": 1309,
                                 "gmv": 42840.51,
-                                "avg_fulfillment": 28.15
+                                "avg_fulfillment": 27.37
                         },
                         {
                                 "hour": 13,
                                 "orders": 1033,
                                 "gmv": 34224.49,
-                                "avg_fulfillment": 28.09
+                                "avg_fulfillment": 27.45
                         },
                         {
                                 "hour": 14,
                                 "orders": 954,
                                 "gmv": 32095.61,
-                                "avg_fulfillment": 32.23
+                                "avg_fulfillment": 28.48
                         },
                         {
                                 "hour": 15,
                                 "orders": 1044,
                                 "gmv": 37772.7,
-                                "avg_fulfillment": 32.18
+                                "avg_fulfillment": 30.47
                         },
                         {
                                 "hour": 16,
                                 "orders": 1407,
                                 "gmv": 57143.81,
-                                "avg_fulfillment": 31.94
+                                "avg_fulfillment": 31.27
                         },
                         {
                                 "hour": 17,
                                 "orders": 1837,
                                 "gmv": 80962.81,
-                                "avg_fulfillment": 32.45
+                                "avg_fulfillment": 31.96
                         },
                         {
                                 "hour": 18,
                                 "orders": 1879,
                                 "gmv": 81279.74,
-                                "avg_fulfillment": 37.84
+                                "avg_fulfillment": 36.07
                         },
                         {
                                 "hour": 19,
                                 "orders": 1790,
                                 "gmv": 71948.49,
-                                "avg_fulfillment": 32.37
+                                "avg_fulfillment": 31.04
                         },
                         {
                                 "hour": 20,
                                 "orders": 1322,
                                 "gmv": 48536.77,
-                                "avg_fulfillment": 30.02
+                                "avg_fulfillment": 29.32
                         },
                         {
                                 "hour": 21,
                                 "orders": 965,
                                 "gmv": 32572.7,
-                                "avg_fulfillment": 30.38
+                                "avg_fulfillment": 28.95
                         },
                         {
                                 "hour": 22,
                                 "orders": 699,
                                 "gmv": 21684.09,
-                                "avg_fulfillment": 27.83
+                                "avg_fulfillment": 26.25
                         },
                         {
                                 "hour": 23,
                                 "orders": 572,
                                 "gmv": 17276.65,
-                                "avg_fulfillment": 29.02
+                                "avg_fulfillment": 28.09
                         }
                 ],
                 "all_regions": [
@@ -1288,7 +1300,7 @@
                                 "region": "San Francisco",
                                 "gmv": 112394.18,
                                 "orders": 3077,
-                                "avg_delivery_time": 29.62,
+                                "avg_delivery_time": 28.29,
                                 "performance_tier": "Average",
                                 "retention": 22.61
                         },
@@ -1296,7 +1308,7 @@
                                 "region": "Dallas",
                                 "gmv": 37136.17,
                                 "orders": 794,
-                                "avg_delivery_time": 41.17,
+                                "avg_delivery_time": 41.13,
                                 "performance_tier": "Poor",
                                 "retention": 18.94
                         },
@@ -1312,7 +1324,7 @@
                                 "region": "Scranton",
                                 "gmv": 91475.11,
                                 "orders": 3220,
-                                "avg_delivery_time": 23.71,
+                                "avg_delivery_time": 22.78,
                                 "performance_tier": "Elite",
                                 "retention": 38.81
                         },
@@ -1320,23 +1332,23 @@
                                 "region": "Chicago",
                                 "gmv": 12298.09,
                                 "orders": 215,
-                                "avg_delivery_time": 35.97,
-                                "performance_tier": "Poor",
+                                "avg_delivery_time": 34.55,
+                                "performance_tier": "Average",
                                 "retention": 9.5
                         },
                         {
                                 "region": "Traverse City, MI",
                                 "gmv": 32196.73,
                                 "orders": 643,
-                                "avg_delivery_time": 37.02,
-                                "performance_tier": "Poor",
+                                "avg_delivery_time": 34.75,
+                                "performance_tier": "Average",
                                 "retention": 20.17
                         },
                         {
                                 "region": "Calgary",
                                 "gmv": 420.11,
                                 "orders": 10,
-                                "avg_delivery_time": 41.33,
+                                "avg_delivery_time": 41.32,
                                 "performance_tier": "Poor",
                                 "retention": 0.0
                         },
@@ -1344,7 +1356,7 @@
                                 "region": "Oak Harbor, WA",
                                 "gmv": 5291.06,
                                 "orders": 151,
-                                "avg_delivery_time": 25.78,
+                                "avg_delivery_time": 25.47,
                                 "performance_tier": "Average",
                                 "retention": 26.17
                         },
@@ -1352,7 +1364,7 @@
                                 "region": "Lufkin, TX",
                                 "gmv": 1634.35,
                                 "orders": 53,
-                                "avg_delivery_time": 24.55,
+                                "avg_delivery_time": 24.44,
                                 "performance_tier": "Elite",
                                 "retention": 37.04
                         },
@@ -1368,15 +1380,15 @@
                                 "region": "Hamilton",
                                 "gmv": 3613.97,
                                 "orders": 161,
-                                "avg_delivery_time": 26.68,
-                                "performance_tier": "Average",
+                                "avg_delivery_time": 23.6,
+                                "performance_tier": "Elite",
                                 "retention": 17.89
                         },
                         {
                                 "region": "South Bay",
                                 "gmv": 10690.07,
                                 "orders": 162,
-                                "avg_delivery_time": 48.27,
+                                "avg_delivery_time": 48.26,
                                 "performance_tier": "Poor",
                                 "retention": 16.53
                         },
@@ -1392,7 +1404,7 @@
                                 "region": "Bellevue",
                                 "gmv": 29737.83,
                                 "orders": 767,
-                                "avg_delivery_time": 45.15,
+                                "avg_delivery_time": 42.98,
                                 "performance_tier": "Poor",
                                 "retention": 28.27
                         },
@@ -1400,7 +1412,7 @@
                                 "region": "Rochester",
                                 "gmv": 1997.1,
                                 "orders": 41,
-                                "avg_delivery_time": 32.49,
+                                "avg_delivery_time": 32.48,
                                 "performance_tier": "Average",
                                 "retention": 20.69
                         },
@@ -1408,7 +1420,7 @@
                                 "region": "Baltimore",
                                 "gmv": 586.49,
                                 "orders": 13,
-                                "avg_delivery_time": 35.88,
+                                "avg_delivery_time": 35.87,
                                 "performance_tier": "Poor",
                                 "retention": 18.18
                         },
@@ -1416,7 +1428,7 @@
                                 "region": "Lubbock",
                                 "gmv": 17237.98,
                                 "orders": 709,
-                                "avg_delivery_time": 19.91,
+                                "avg_delivery_time": 19.66,
                                 "performance_tier": "Super",
                                 "retention": 33.51
                         },
@@ -1432,7 +1444,7 @@
                                 "region": "Buffalo",
                                 "gmv": 4682.68,
                                 "orders": 179,
-                                "avg_delivery_time": 20.21,
+                                "avg_delivery_time": 20.2,
                                 "performance_tier": "Elite",
                                 "retention": 22.66
                         },
@@ -1440,7 +1452,7 @@
                                 "region": "Lakeland",
                                 "gmv": 11300.33,
                                 "orders": 427,
-                                "avg_delivery_time": 31.86,
+                                "avg_delivery_time": 31.51,
                                 "performance_tier": "Average",
                                 "retention": 16.76
                         },
@@ -1448,7 +1460,7 @@
                                 "region": "Hartford",
                                 "gmv": 7981.0,
                                 "orders": 151,
-                                "avg_delivery_time": 38.86,
+                                "avg_delivery_time": 35.7,
                                 "performance_tier": "Poor",
                                 "retention": 13.08
                         },
@@ -1456,7 +1468,7 @@
                                 "region": "Bakersfield",
                                 "gmv": 3650.6,
                                 "orders": 69,
-                                "avg_delivery_time": 114.8,
+                                "avg_delivery_time": 36.49,
                                 "performance_tier": "Poor",
                                 "retention": 11.67
                         },
@@ -1464,7 +1476,7 @@
                                 "region": "Windsor",
                                 "gmv": 4172.19,
                                 "orders": 142,
-                                "avg_delivery_time": 31.59,
+                                "avg_delivery_time": 31.58,
                                 "performance_tier": "Average",
                                 "retention": 15.32
                         },
@@ -1472,7 +1484,7 @@
                                 "region": "LA Valley",
                                 "gmv": 658.91,
                                 "orders": 28,
-                                "avg_delivery_time": 38.07,
+                                "avg_delivery_time": 38.06,
                                 "performance_tier": "Poor",
                                 "retention": 25.0
                         },
@@ -1488,7 +1500,7 @@
                                 "region": "Vernon, BC",
                                 "gmv": 2590.89,
                                 "orders": 80,
-                                "avg_delivery_time": 27.87,
+                                "avg_delivery_time": 27.5,
                                 "performance_tier": "Average",
                                 "retention": 20.63
                         },
@@ -1512,7 +1524,7 @@
                                 "region": "Winnipeg",
                                 "gmv": 5220.56,
                                 "orders": 191,
-                                "avg_delivery_time": 21.17,
+                                "avg_delivery_time": 21.13,
                                 "performance_tier": "Elite",
                                 "retention": 26.62
                         },
@@ -1520,7 +1532,7 @@
                                 "region": "Minneapolis",
                                 "gmv": 20728.63,
                                 "orders": 711,
-                                "avg_delivery_time": 25.98,
+                                "avg_delivery_time": 25.97,
                                 "performance_tier": "Average",
                                 "retention": 21.64
                         },
@@ -1528,7 +1540,7 @@
                                 "region": "Orange County",
                                 "gmv": 48432.71,
                                 "orders": 1263,
-                                "avg_delivery_time": 22.48,
+                                "avg_delivery_time": 20.03,
                                 "performance_tier": "Elite",
                                 "retention": 22.49
                         },
@@ -1536,7 +1548,7 @@
                                 "region": "Central Jersey",
                                 "gmv": 29672.32,
                                 "orders": 1000,
-                                "avg_delivery_time": 25.44,
+                                "avg_delivery_time": 25.31,
                                 "performance_tier": "Average",
                                 "retention": 25.51
                         },
@@ -1560,7 +1572,7 @@
                                 "region": "Whistler, BC",
                                 "gmv": 11810.02,
                                 "orders": 560,
-                                "avg_delivery_time": 20.9,
+                                "avg_delivery_time": 20.89,
                                 "performance_tier": "Elite",
                                 "retention": 42.05
                         },
@@ -1576,7 +1588,7 @@
                                 "region": "Perth",
                                 "gmv": 227.0,
                                 "orders": 10,
-                                "avg_delivery_time": 18.64,
+                                "avg_delivery_time": 18.63,
                                 "performance_tier": "Super",
                                 "retention": 25.0
                         },
@@ -1584,7 +1596,7 @@
                                 "region": "Nashville",
                                 "gmv": 17008.6,
                                 "orders": 483,
-                                "avg_delivery_time": 32.64,
+                                "avg_delivery_time": 31.02,
                                 "performance_tier": "Average",
                                 "retention": 27.82
                         },
@@ -1592,7 +1604,7 @@
                                 "region": "Cedar Rapids",
                                 "gmv": 2730.16,
                                 "orders": 56,
-                                "avg_delivery_time": 38.23,
+                                "avg_delivery_time": 37.26,
                                 "performance_tier": "Poor",
                                 "retention": 14.89
                         },
@@ -1600,7 +1612,7 @@
                                 "region": "San Antonio",
                                 "gmv": 32234.62,
                                 "orders": 774,
-                                "avg_delivery_time": 44.46,
+                                "avg_delivery_time": 42.24,
                                 "performance_tier": "Poor",
                                 "retention": 17.65
                         },
@@ -1608,7 +1620,7 @@
                                 "region": "Rapid City, SD",
                                 "gmv": 8281.21,
                                 "orders": 242,
-                                "avg_delivery_time": 24.67,
+                                "avg_delivery_time": 24.56,
                                 "performance_tier": "Elite",
                                 "retention": 26.35
                         },
@@ -1624,7 +1636,7 @@
                                 "region": "Regina",
                                 "gmv": 2289.98,
                                 "orders": 98,
-                                "avg_delivery_time": 41.67,
+                                "avg_delivery_time": 41.66,
                                 "performance_tier": "Poor",
                                 "retention": 21.54
                         },
@@ -1632,7 +1644,7 @@
                                 "region": "Los Angeles",
                                 "gmv": 371.51,
                                 "orders": 12,
-                                "avg_delivery_time": 33.98,
+                                "avg_delivery_time": 33.95,
                                 "performance_tier": "Average",
                                 "retention": 12.5
                         },
@@ -1640,7 +1652,7 @@
                                 "region": "South Texas",
                                 "gmv": 7938.5,
                                 "orders": 293,
-                                "avg_delivery_time": 45.66,
+                                "avg_delivery_time": 43.95,
                                 "performance_tier": "Poor",
                                 "retention": 30.25
                         },
@@ -1648,7 +1660,7 @@
                                 "region": "Portland",
                                 "gmv": 2270.86,
                                 "orders": 39,
-                                "avg_delivery_time": 278.61,
+                                "avg_delivery_time": 55.25,
                                 "performance_tier": "Poor",
                                 "retention": 5.41
                         },
@@ -1664,7 +1676,7 @@
                                 "region": "Philadelphia",
                                 "gmv": 20598.79,
                                 "orders": 455,
-                                "avg_delivery_time": 33.4,
+                                "avg_delivery_time": 32.02,
                                 "performance_tier": "Average",
                                 "retention": 20.29
                         },
@@ -1672,7 +1684,7 @@
                                 "region": "Boston",
                                 "gmv": 6526.37,
                                 "orders": 290,
-                                "avg_delivery_time": 18.73,
+                                "avg_delivery_time": 18.59,
                                 "performance_tier": "Super",
                                 "retention": 42.98
                         },
@@ -1680,8 +1692,8 @@
                                 "region": "North Jersey",
                                 "gmv": 1616.79,
                                 "orders": 64,
-                                "avg_delivery_time": 35.46,
-                                "performance_tier": "Poor",
+                                "avg_delivery_time": 25.84,
+                                "performance_tier": "Average",
                                 "retention": 31.71
                         }
                 ]
@@ -1689,12 +1701,12 @@
         "regions": {
                 "San Francisco": {
                         "operational": {
-                                "total_fulfillment_time": 29.62,
+                                "total_fulfillment_time": 28.29,
                                 "prep_time": 11.85,
                                 "delivery_time": 16.44,
-                                "fast_pct": 20.7,
-                                "normal_pct": 56.22,
-                                "slow_pct": 22.62,
+                                "fast_pct": 20.77,
+                                "normal_pct": 56.71,
+                                "slow_pct": 22.07,
                                 "driver_to_order_ratio": 0.368
                         },
                         "revenue": {
@@ -1729,17 +1741,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Dallas": {
                         "operational": {
-                                "total_fulfillment_time": 41.17,
+                                "total_fulfillment_time": 41.13,
                                 "prep_time": 20.54,
                                 "delivery_time": 20.59,
                                 "fast_pct": 1.13,
-                                "normal_pct": 34.63,
-                                "slow_pct": 58.82,
+                                "normal_pct": 34.76,
+                                "slow_pct": 58.69,
                                 "driver_to_order_ratio": 0.664
                         },
                         "revenue": {
@@ -1774,7 +1787,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Florence, SC": {
@@ -1819,17 +1833,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Scranton": {
                         "operational": {
-                                "total_fulfillment_time": 23.71,
+                                "total_fulfillment_time": 22.78,
                                 "prep_time": 8.72,
                                 "delivery_time": 14.06,
-                                "fast_pct": 43.2,
-                                "normal_pct": 44.88,
-                                "slow_pct": 9.91,
+                                "fast_pct": 43.66,
+                                "normal_pct": 45.37,
+                                "slow_pct": 8.94,
                                 "driver_to_order_ratio": 0.184
                         },
                         "revenue": {
@@ -1890,17 +1905,18 @@
                                         }
                                 ],
                                 "driver_outlier": 9842768,
-                                "driver_outlier_rate": 27.27
+                                "driver_outlier_rate": 27.27,
+                                "attention_orders": []
                         }
                 },
                 "Chicago": {
                         "operational": {
-                                "total_fulfillment_time": 35.97,
+                                "total_fulfillment_time": 34.55,
                                 "prep_time": 12.71,
                                 "delivery_time": 21.83,
                                 "fast_pct": 13.02,
-                                "normal_pct": 42.79,
-                                "slow_pct": 43.72,
+                                "normal_pct": 43.26,
+                                "slow_pct": 43.26,
                                 "driver_to_order_ratio": 0.707
                         },
                         "revenue": {
@@ -1935,17 +1951,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Traverse City, MI": {
                         "operational": {
-                                "total_fulfillment_time": 37.02,
+                                "total_fulfillment_time": 34.75,
                                 "prep_time": 16.29,
                                 "delivery_time": 18.46,
                                 "fast_pct": 3.42,
-                                "normal_pct": 52.57,
-                                "slow_pct": 43.08,
+                                "normal_pct": 53.34,
+                                "slow_pct": 42.3,
                                 "driver_to_order_ratio": 0.432
                         },
                         "revenue": {
@@ -1980,12 +1997,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Calgary": {
                         "operational": {
-                                "total_fulfillment_time": 41.33,
+                                "total_fulfillment_time": 41.32,
                                 "prep_time": 21.67,
                                 "delivery_time": 19.66,
                                 "fast_pct": 0.0,
@@ -2032,17 +2050,18 @@
                                 "restaurant_outlier_rate": 10.0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Oak Harbor, WA": {
                         "operational": {
-                                "total_fulfillment_time": 25.78,
+                                "total_fulfillment_time": 25.47,
                                 "prep_time": 9.96,
                                 "delivery_time": 15.51,
                                 "fast_pct": 29.14,
-                                "normal_pct": 57.62,
-                                "slow_pct": 12.58,
+                                "normal_pct": 58.28,
+                                "slow_pct": 11.92,
                                 "driver_to_order_ratio": 0.609
                         },
                         "revenue": {
@@ -2077,16 +2096,17 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Lufkin, TX": {
                         "operational": {
-                                "total_fulfillment_time": 24.55,
+                                "total_fulfillment_time": 24.44,
                                 "prep_time": 10.44,
                                 "delivery_time": 14.0,
                                 "fast_pct": 39.62,
-                                "normal_pct": 52.83,
+                                "normal_pct": 50.94,
                                 "slow_pct": 7.55,
                                 "driver_to_order_ratio": 0.849
                         },
@@ -2122,7 +2142,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Sacramento": {
@@ -2167,12 +2188,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Hamilton": {
                         "operational": {
-                                "total_fulfillment_time": 26.68,
+                                "total_fulfillment_time": 23.6,
                                 "prep_time": 11.3,
                                 "delivery_time": 12.3,
                                 "fast_pct": 43.48,
@@ -2212,12 +2234,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "South Bay": {
                         "operational": {
-                                "total_fulfillment_time": 48.27,
+                                "total_fulfillment_time": 48.26,
                                 "prep_time": 29.36,
                                 "delivery_time": 18.9,
                                 "fast_pct": 0.0,
@@ -2257,7 +2280,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Lake Tahoe, CA": {
@@ -2302,17 +2326,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Bellevue": {
                         "operational": {
-                                "total_fulfillment_time": 45.15,
+                                "total_fulfillment_time": 42.98,
                                 "prep_time": 22.39,
                                 "delivery_time": 20.59,
-                                "fast_pct": 1.56,
-                                "normal_pct": 26.21,
-                                "slow_pct": 70.53,
+                                "fast_pct": 1.69,
+                                "normal_pct": 26.47,
+                                "slow_pct": 70.14,
                                 "driver_to_order_ratio": 0.69
                         },
                         "revenue": {
@@ -2347,12 +2372,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Rochester": {
                         "operational": {
-                                "total_fulfillment_time": 32.49,
+                                "total_fulfillment_time": 32.48,
                                 "prep_time": 14.49,
                                 "delivery_time": 17.99,
                                 "fast_pct": 4.88,
@@ -2392,12 +2418,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Baltimore": {
                         "operational": {
-                                "total_fulfillment_time": 35.88,
+                                "total_fulfillment_time": 35.87,
                                 "prep_time": 19.66,
                                 "delivery_time": 16.21,
                                 "fast_pct": 7.69,
@@ -2444,17 +2471,18 @@
                                 "restaurant_outlier_rate": 7.69,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Lubbock": {
                         "operational": {
-                                "total_fulfillment_time": 19.91,
+                                "total_fulfillment_time": 19.66,
                                 "prep_time": 9.53,
                                 "delivery_time": 10.13,
-                                "fast_pct": 60.93,
-                                "normal_pct": 32.86,
-                                "slow_pct": 5.22,
+                                "fast_pct": 61.07,
+                                "normal_pct": 33.43,
+                                "slow_pct": 4.51,
                                 "driver_to_order_ratio": 0.597
                         },
                         "revenue": {
@@ -2489,7 +2517,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Port St. Lucie": {
@@ -2534,17 +2563,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Buffalo": {
                         "operational": {
-                                "total_fulfillment_time": 20.21,
+                                "total_fulfillment_time": 20.2,
                                 "prep_time": 8.04,
                                 "delivery_time": 12.17,
                                 "fast_pct": 54.75,
-                                "normal_pct": 37.99,
-                                "slow_pct": 3.91,
+                                "normal_pct": 38.55,
+                                "slow_pct": 3.35,
                                 "driver_to_order_ratio": 0.553
                         },
                         "revenue": {
@@ -2579,17 +2609,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Lakeland": {
                         "operational": {
-                                "total_fulfillment_time": 31.86,
+                                "total_fulfillment_time": 31.51,
                                 "prep_time": 14.25,
                                 "delivery_time": 17.25,
                                 "fast_pct": 9.6,
-                                "normal_pct": 55.97,
-                                "slow_pct": 32.79,
+                                "normal_pct": 56.44,
+                                "slow_pct": 32.32,
                                 "driver_to_order_ratio": 0.581
                         },
                         "revenue": {
@@ -2624,12 +2655,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Hartford": {
                         "operational": {
-                                "total_fulfillment_time": 38.86,
+                                "total_fulfillment_time": 35.7,
                                 "prep_time": 15.56,
                                 "delivery_time": 20.14,
                                 "fast_pct": 3.97,
@@ -2669,17 +2701,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Bakersfield": {
                         "operational": {
-                                "total_fulfillment_time": 114.8,
+                                "total_fulfillment_time": 36.49,
                                 "prep_time": 13.14,
                                 "delivery_time": 23.36,
                                 "fast_pct": 2.9,
-                                "normal_pct": 44.93,
-                                "slow_pct": 52.17,
+                                "normal_pct": 49.28,
+                                "slow_pct": 47.83,
                                 "driver_to_order_ratio": 0.87
                         },
                         "revenue": {
@@ -2714,12 +2747,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Windsor": {
                         "operational": {
-                                "total_fulfillment_time": 31.59,
+                                "total_fulfillment_time": 31.58,
                                 "prep_time": 13.06,
                                 "delivery_time": 18.52,
                                 "fast_pct": 7.04,
@@ -2759,12 +2793,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "LA Valley": {
                         "operational": {
-                                "total_fulfillment_time": 38.07,
+                                "total_fulfillment_time": 38.06,
                                 "prep_time": 24.96,
                                 "delivery_time": 13.1,
                                 "fast_pct": 64.29,
@@ -2804,7 +2839,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Auckland": {
@@ -2849,12 +2885,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Vernon, BC": {
                         "operational": {
-                                "total_fulfillment_time": 27.87,
+                                "total_fulfillment_time": 27.5,
                                 "prep_time": 12.06,
                                 "delivery_time": 15.44,
                                 "fast_pct": 18.75,
@@ -2894,7 +2931,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Brooklyn": {
@@ -2939,7 +2977,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Denver/Boulder": {
@@ -2984,12 +3023,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Winnipeg": {
                         "operational": {
-                                "total_fulfillment_time": 21.17,
+                                "total_fulfillment_time": 21.13,
                                 "prep_time": 7.59,
                                 "delivery_time": 13.55,
                                 "fast_pct": 51.31,
@@ -3029,12 +3069,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Minneapolis": {
                         "operational": {
-                                "total_fulfillment_time": 25.98,
+                                "total_fulfillment_time": 25.97,
                                 "prep_time": 11.03,
                                 "delivery_time": 14.94,
                                 "fast_pct": 23.91,
@@ -3074,17 +3115,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Orange County": {
                         "operational": {
-                                "total_fulfillment_time": 22.48,
+                                "total_fulfillment_time": 20.03,
                                 "prep_time": 6.62,
                                 "delivery_time": 13.41,
-                                "fast_pct": 62.23,
-                                "normal_pct": 26.44,
-                                "slow_pct": 9.9,
+                                "fast_pct": 63.58,
+                                "normal_pct": 27.4,
+                                "slow_pct": 7.6,
                                 "driver_to_order_ratio": 0.36
                         },
                         "revenue": {
@@ -3119,17 +3161,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Central Jersey": {
                         "operational": {
-                                "total_fulfillment_time": 25.44,
+                                "total_fulfillment_time": 25.31,
                                 "prep_time": 11.12,
                                 "delivery_time": 14.19,
-                                "fast_pct": 37.0,
-                                "normal_pct": 45.3,
-                                "slow_pct": 16.7,
+                                "fast_pct": 37.2,
+                                "normal_pct": 45.4,
+                                "slow_pct": 16.4,
                                 "driver_to_order_ratio": 0.418
                         },
                         "revenue": {
@@ -3164,7 +3207,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Albany": {
@@ -3209,7 +3253,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Medford, OR": {
@@ -3254,12 +3299,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Whistler, BC": {
                         "operational": {
-                                "total_fulfillment_time": 20.9,
+                                "total_fulfillment_time": 20.89,
                                 "prep_time": 6.48,
                                 "delivery_time": 14.41,
                                 "fast_pct": 56.43,
@@ -3299,7 +3345,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Northern Virginia": {
@@ -3344,12 +3391,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Perth": {
                         "operational": {
-                                "total_fulfillment_time": 18.64,
+                                "total_fulfillment_time": 18.63,
                                 "prep_time": 7.67,
                                 "delivery_time": 10.96,
                                 "fast_pct": 80.0,
@@ -3389,17 +3437,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Nashville": {
                         "operational": {
-                                "total_fulfillment_time": 32.64,
+                                "total_fulfillment_time": 31.02,
                                 "prep_time": 13.81,
                                 "delivery_time": 17.21,
                                 "fast_pct": 19.67,
-                                "normal_pct": 60.46,
-                                "slow_pct": 19.25,
+                                "normal_pct": 60.66,
+                                "slow_pct": 19.05,
                                 "driver_to_order_ratio": 0.491
                         },
                         "revenue": {
@@ -3434,12 +3483,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Cedar Rapids": {
                         "operational": {
-                                "total_fulfillment_time": 38.23,
+                                "total_fulfillment_time": 37.26,
                                 "prep_time": 19.3,
                                 "delivery_time": 17.96,
                                 "fast_pct": 3.57,
@@ -3479,17 +3529,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "San Antonio": {
                         "operational": {
-                                "total_fulfillment_time": 44.46,
+                                "total_fulfillment_time": 42.24,
                                 "prep_time": 21.66,
                                 "delivery_time": 20.57,
-                                "fast_pct": 2.84,
-                                "normal_pct": 23.51,
-                                "slow_pct": 72.87,
+                                "fast_pct": 2.71,
+                                "normal_pct": 23.64,
+                                "slow_pct": 72.74,
                                 "driver_to_order_ratio": 0.714
                         },
                         "revenue": {
@@ -3524,17 +3575,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Rapid City, SD": {
                         "operational": {
-                                "total_fulfillment_time": 24.67,
+                                "total_fulfillment_time": 24.56,
                                 "prep_time": 8.13,
                                 "delivery_time": 16.42,
-                                "fast_pct": 30.17,
+                                "fast_pct": 30.58,
                                 "normal_pct": 58.68,
-                                "slow_pct": 10.74,
+                                "slow_pct": 10.33,
                                 "driver_to_order_ratio": 0.694
                         },
                         "revenue": {
@@ -3569,7 +3621,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Muncie, IN": {
@@ -3614,12 +3667,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Regina": {
                         "operational": {
-                                "total_fulfillment_time": 41.67,
+                                "total_fulfillment_time": 41.66,
                                 "prep_time": 26.8,
                                 "delivery_time": 14.86,
                                 "fast_pct": 0.0,
@@ -3659,12 +3713,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Los Angeles": {
                         "operational": {
-                                "total_fulfillment_time": 33.98,
+                                "total_fulfillment_time": 33.95,
                                 "prep_time": 17.38,
                                 "delivery_time": 16.57,
                                 "fast_pct": 0.0,
@@ -3704,12 +3759,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "South Texas": {
                         "operational": {
-                                "total_fulfillment_time": 45.66,
+                                "total_fulfillment_time": 43.95,
                                 "prep_time": 29.11,
                                 "delivery_time": 14.84,
                                 "fast_pct": 2.05,
@@ -3749,14 +3805,15 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Portland": {
                         "operational": {
-                                "total_fulfillment_time": 278.61,
-                                "prep_time": 218.5,
-                                "delivery_time": 21.37,
+                                "total_fulfillment_time": 55.25,
+                                "prep_time": 34.12,
+                                "delivery_time": 21.13,
                                 "fast_pct": 0.0,
                                 "normal_pct": 2.56,
                                 "slow_pct": 94.87,
@@ -3794,7 +3851,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": [
+                                        {
+                                                "customer_order_time": "2024-09-13 18:13:44.711000",
+                                                "restaurant_receive_time": "2024-09-14 18:14:20.319000",
+                                                "driver_arrive_time": "2024-09-19 15:34:54.358000",
+                                                "customer_receive_time": "2024-09-19 16:04:53.097000",
+                                                "total_fulfillment_min": 7070.55,
+                                                "delay_hours": 117.3,
+                                                "reason": "Driver arrival delayed by 117.3 hours (likely manual delay request or fulfillment issue)"
+                                        }
+                                ]
                         }
                 },
                 "Cincinnati": {
@@ -3839,17 +3907,18 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Philadelphia": {
                         "operational": {
-                                "total_fulfillment_time": 33.4,
+                                "total_fulfillment_time": 32.02,
                                 "prep_time": 14.82,
                                 "delivery_time": 17.19,
                                 "fast_pct": 7.69,
-                                "normal_pct": 61.32,
-                                "slow_pct": 30.77,
+                                "normal_pct": 61.76,
+                                "slow_pct": 30.33,
                                 "driver_to_order_ratio": 0.774
                         },
                         "revenue": {
@@ -3884,16 +3953,17 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "Boston": {
                         "operational": {
-                                "total_fulfillment_time": 18.73,
+                                "total_fulfillment_time": 18.59,
                                 "prep_time": 9.66,
                                 "delivery_time": 8.93,
-                                "fast_pct": 62.41,
-                                "normal_pct": 32.07,
+                                "fast_pct": 62.76,
+                                "normal_pct": 31.72,
                                 "slow_pct": 5.17,
                                 "driver_to_order_ratio": 0.428
                         },
@@ -3929,12 +3999,13 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 },
                 "North Jersey": {
                         "operational": {
-                                "total_fulfillment_time": 35.46,
+                                "total_fulfillment_time": 25.84,
                                 "prep_time": 13.63,
                                 "delivery_time": 12.21,
                                 "fast_pct": 34.38,
@@ -3974,7 +4045,8 @@
                                 "restaurant_outlier_rate": 0,
                                 "driver_outliers": [],
                                 "driver_outlier": null,
-                                "driver_outlier_rate": 0
+                                "driver_outlier_rate": 0,
+                                "attention_orders": []
                         }
                 }
         },
@@ -4982,44 +5054,44 @@
                 ],
                 "fulfillment_by_region": [
                         {
-                                "region": "Perth",
-                                "avg_time": 18.64
+                                "region": "Boston",
+                                "avg_time": 18.59
                         },
                         {
-                                "region": "Boston",
-                                "avg_time": 18.73
+                                "region": "Perth",
+                                "avg_time": 18.63
                         },
                         {
                                 "region": "Lubbock",
-                                "avg_time": 19.91
-                        },
-                        {
-                                "region": "Buffalo",
-                                "avg_time": 20.21
-                        },
-                        {
-                                "region": "Whistler, BC",
-                                "avg_time": 20.9
-                        },
-                        {
-                                "region": "Winnipeg",
-                                "avg_time": 21.17
+                                "avg_time": 19.66
                         },
                         {
                                 "region": "Orange County",
-                                "avg_time": 22.48
+                                "avg_time": 20.03
+                        },
+                        {
+                                "region": "Buffalo",
+                                "avg_time": 20.2
+                        },
+                        {
+                                "region": "Whistler, BC",
+                                "avg_time": 20.89
+                        },
+                        {
+                                "region": "Winnipeg",
+                                "avg_time": 21.13
                         },
                         {
                                 "region": "Scranton",
-                                "avg_time": 23.71
+                                "avg_time": 22.78
+                        },
+                        {
+                                "region": "Hamilton",
+                                "avg_time": 23.6
                         },
                         {
                                 "region": "Lufkin, TX",
-                                "avg_time": 24.55
-                        },
-                        {
-                                "region": "Rapid City, SD",
-                                "avg_time": 24.67
+                                "avg_time": 24.44
                         }
                 ],
                 "gmv_by_region": [
@@ -5890,6 +5962,21 @@
                 });
             }
             
+            // Attention orders (at the bottom)
+            if (marketOutliers.attention_orders && marketOutliers.attention_orders.length > 0) {
+                marketOutliers.attention_orders.forEach(order => {
+                    flagsHTML += `
+                        <div class="flag-item warning">
+                            <div class="flag-title">⚠️ Attention Order Detected</div>
+                            <div class="flag-value">Region: ${order.region} - Order placed: ${new Date(order.customer_order_time).toLocaleString()}</div>
+                            <div class="flag-value">Driver delay: ${order.delay_hours} hours after restaurant received order</div>
+                            <div class="flag-value" style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">${order.reason}</div>
+                            <div class="flag-value" style="font-size: 0.75rem; margin-top: 0.25rem; opacity: 0.8;">Note: This order is excluded from timing calculations but included in total order count and GMV.</div>
+                        </div>
+                    `;
+                });
+            }
+            
             if (!flagsHTML) {
                 flagsHTML = '<div class="flag-item info"><div class="flag-title">No Issues Detected</div><div class="flag-value">All metrics within normal ranges across all markets</div></div>';
             }
@@ -5986,6 +6073,21 @@
                             <div class="flag-title">Restaurant Outlier Detected</div>
                             <div class="flag-value">Restaurant ID ${restaurant.id} - Refund Rate: ${restaurant.rate}% (${restaurant.refund_count}/${restaurant.total_orders} orders)</div>
                             <div class="flag-value" style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">This restaurant's refund rate is more than 3 standard deviations above the mean, indicating statistically unusual performance.</div>
+                        </div>
+                    `;
+                });
+            }
+            
+            // Attention orders (at the bottom)
+            if (flags.attention_orders && flags.attention_orders.length > 0) {
+                flags.attention_orders.forEach(order => {
+                    flagsHTML += `
+                        <div class="flag-item warning">
+                            <div class="flag-title">⚠️ Attention Order Detected</div>
+                            <div class="flag-value">Order placed: ${new Date(order.customer_order_time).toLocaleString()}</div>
+                            <div class="flag-value">Driver delay: ${order.delay_hours} hours after restaurant received order</div>
+                            <div class="flag-value" style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">${order.reason}</div>
+                            <div class="flag-value" style="font-size: 0.75rem; margin-top: 0.25rem; opacity: 0.8;">Note: This order is excluded from timing calculations but included in total order count and GMV.</div>
                         </div>
                     `;
                 });
